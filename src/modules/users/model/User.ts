@@ -13,10 +13,14 @@ class User {
 
   updated_at: Date;
 
-  constructor() {
+  constructor(name: string, email: string, admin = false) {
     if (!this.id) {
       this.id = uuidV4();
-      this.admin = false;
+      this.name = name;
+      this.email = email;
+      this.admin = admin;
+      this.created_at = new Date();
+      this.updated_at = new Date();
     }
   }
 }
